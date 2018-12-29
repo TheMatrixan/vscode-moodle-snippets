@@ -1,0 +1,43 @@
+{
+  "name": "vscode-moodle-snippets",
+  "displayName": "Moodle - snippets & autocomplete",
+  "description": "Moodle – snippets & autocomplete for VSCode editor",
+  "version": "0.0.1",
+  "publisher": "MateuszLesiak",
+  "author": {
+    "name": "Mateusz Lesiak"
+  },
+  "license": "GPLv3",
+  "homepage": "https://github.com/TheMatrixan/vscode-moodle-snippets",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheMatrixan/vscode-moodle-snippets"
+  },
+  "bugs": {
+    "url": "https://github.com/TheMatrixan/vscode-moodle-snippets/issues"
+  },
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.30.0"
+  },
+  "keywords": [
+    "php",
+    "moodle",
+    "code",
+    "snippets"
+  ],
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "php",
+        "path": "./snippets/GLOBAL/OUTPUT.json"
+      },
+      {
+        "path": "./snippets/comments.json"
+      }
+    ]
+  }
+}
