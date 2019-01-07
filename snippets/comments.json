@@ -15,29 +15,6 @@
 		],
 		"description": "Comment block with author of this file for Moodle."
 	},
-	"Moodle file author header for mustache": {
-		"prefix": ["comment_file_author", "cfa"],
-		"scope": "mustache",
-		"body": [
-			"{{!",
-			"    Template for ${1:short_description}",
-			"",
-            "    ${2:long_description}",
-			"",
-			"    @package    ${3:package}_${4:subpackage}",
-			"    @copyright  ${CURRENT_YEAR} ${5:author_fullname} <${6:author_link}>",
-			"    @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later",
-			"    @template   $3_$4/${TM_FILENAME_BASE}",
-			"",
-			"    Example context (json):",
-			"    {",
-			"        ${7:example_json}",
-			"    }",
-			"}}"
-		],
-		"description": "Comment block with author of mustache file for Moodle."
-	},
-
 	"Moodle header information": {
 		"prefix": ["comment_file_moodle", "cfm"],
 		"scope": "php,javascript,css",
@@ -60,26 +37,4 @@
 		],
 		"description": "Moodle header information."
 	},
-	"Moodle mustache header information": {
-		"prefix": ["comment_file_moodle", "cfm"],
-		"scope": "mustache",
-		"body": [
-			"{{!",
-			"    This file is part of Moodle - http://moodle.org/",
-			"",
-			"    Moodle is free software: you can redistribute it and/or modify",
-			"    it under the terms of the GNU General Public License as published by",
-			"    the Free Software Foundation, either version 3 of the License, or",
-			"    (at your option) any later version.",
-			"",
-			"    Moodle is distributed in the hope that it will be useful,",
-			"    but WITHOUT ANY WARRANTY; without even the implied warranty of",
-			"    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the",
-			"    GNU General Public License for more details.",
-			"",
-			"    You should have received a copy of the GNU General Public License",
-			"    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.",
-			"}}"
-		]
-	}
 }

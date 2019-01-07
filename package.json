@@ -2,7 +2,7 @@
   "name": "vscode-moodle-snippets",
   "displayName": "Moodle - snippets & autocomplete",
   "description": "Moodle – snippets & autocomplete for VSCode editor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "MateuszLesiak",
   "author": {
     "name": "Mateusz Lesiak"
@@ -36,7 +36,16 @@
         "path": "./snippets/GLOBAL/OUTPUT.json"
       },
       {
+        "language": "php",
+        "path": "./snippets/lib/moodlelib.json"
+      },
+      {
+        "language": "php",
         "path": "./snippets/comments.json"
+      },
+      {
+        "language": "mustache",
+        "path": "./snippets/mustache-comments.json"
       }
     ]
   }
