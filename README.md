@@ -7,6 +7,7 @@ This extension for Visual Studio Code adds Moodle v. 3.4.6 snippets and autocomp
 Snippets for all methods for GLOBAL variables:
 
 - `$OUTPUT`
+- `$DB`
 
 Snippets for all methods from:
 
@@ -35,6 +36,19 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | `$Opu`  | `$OUTPUT->pix_url(...);`              |
 | `$Orft` | `$OUTPUT->render_from_template(...);` |
 
+### `$DB` Snippets
+
+| Snippet  | Purpose                     |
+| -------- | --------------------------- |
+| `$DBgr`  | `$DB->get_record(...);`     |
+| `$DBgrs` | `$DB->get_records(...);`    |
+| `$DBre`  | `$DB->record_exists(...);`  |
+| `$DBcr`  | `$DB->count_records(...);`  |
+| `$DBir`  | `$DB->insert_record(...);`  |
+| `$DBirs` | `$DB->insert_records(...);` |
+| `$DBur`  | `$DB->update_record(...);`  |
+| `$DBdrs` | `$DB->delete_records(...);` |
+
 ### `moodlelib.php` Snippets
 
 | Snippet | Purpose                  |
@@ -51,7 +65,7 @@ VSCode 1.30.0
 
 ## Release Notes
 
-### 1.0.0
+### 1.0.0-3.4.6
 
 - Initial release
 

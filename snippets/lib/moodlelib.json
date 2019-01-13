@@ -5,7 +5,7 @@
     "description": "Returns a particular value for the named variable, taken from POST or GET. If the parameter doesn't exist then an error is thrown because we require this variable. This function should be used to initialise all required values in a script that are based on parameters."
   },
   "required_param_array": {
-    "prefix": ["required_param_array", "rpa"],
+    "prefix": "required_param_array",
     "body": "required_param_array(${1:\\$parameter_name}, ${2|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
     "description": "Returns a particular array value for the named variable, taken from POST or GET. This function should be used to initialise all required values in a script that are based on parameters."
   },
@@ -15,7 +15,7 @@
     "description": "Returns a particular value for the named variable, taken from POST or GET, otherwise returning a given default. This function should be used to initialise all required values in a script that are based on parameters."
   },
   "optional_param_array": {
-    "prefix": ["optional_param_array", "opa"],
+    "prefix": "optional_param_array",
     "body": "optional_param_array(${1:\\$parameter_name}, ${2:\\$default_value}, ${3|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
     "description": "Returns a particular array for the named variable, taken from POST or GET, otherwise returning a given default. This function should be used to initialise all required values in a script that are based on parameters."
   },
