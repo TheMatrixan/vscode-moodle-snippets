@@ -1,0 +1,232 @@
+{
+  "$PAGE->force_settings_menu": {
+    "prefix": "$PAGE->force_settings_menu",
+    "body": "$PAGE->force_settings_menu(${1:\\$forced});",
+    "description": "Force the settings menu to be displayed on this page. This will only force the settings menu on an activity / resource page that is being displayed on a theme that uses a settings menu."
+  },
+  "$PAGE->is_settings_menu_forced": {
+    "prefix": "$PAGE->is_settings_menu_forced",
+    "body": "$PAGE->is_settings_menu_forced();",
+    "description": "Check to see if the settings menu is forced to display on this activity / resource page. This only applies to themes that use the settings menu."
+  },
+  "$PAGE->get_renderer": {
+    "prefix": "$PAGE->get_renderer",
+    "body": "$PAGE->get_renderer(${1:\\$component}${2:, ${3:\\$subtype}${4:, ${5:\\$target}}});",
+    "description": "Returns instance of page renderer"
+  },
+  "$PAGE->has_navbar": {
+    "prefix": "$PAGE->has_navbar",
+    "body": "$PAGE->has_navbar();",
+    "description": "Checks to see if there are any items on the navbar object"
+  },
+  "$PAGE->start_collecting_javascript_requirements": {
+    "prefix": "$PAGE->start_collecting_javascript_requirements",
+    "body": "$PAGE->start_collecting_javascript_requirements();",
+    "description": "Switches from the regular requirements manager to the fragment requirements manager to capture all necessary JavaScript to display a chunk of HTML such as an mform. This is for use by the get_fragment() web service and not for use elsewhere."
+  },
+  "$PAGE->end_collecting_javascript_requirements": {
+    "prefix": "$PAGE->end_collecting_javascript_requirements",
+    "body": "$PAGE->end_collecting_javascript_requirements();",
+    "description": "Switches back from collecting fragment JS requirement to the original requirement manager"
+  },
+  "$PAGE->user_is_editing": {
+    "prefix": "$PAGE->user_is_editing",
+    "body": "$PAGE->user_is_editing();",
+    "description": "Should the current user see this page in editing mode. That is, are they allowed to edit this page, and are they currently in editing mode."
+  },
+  "$PAGE->user_can_edit_blocks": {
+    "prefix": "$PAGE->user_can_edit_blocks",
+    "body": "$PAGE->user_can_edit_blocks();",
+    "description": "Does the user have permission to edit blocks on this page."
+  },
+  "$PAGE->user_allowed_editing": {
+    "prefix": "$PAGE->user_allowed_editing",
+    "body": "$PAGE->user_allowed_editing();",
+    "description": "Does the user have permission to see this page in editing mode."
+  },
+  "$PAGE->debug_summary": {
+    "prefix": "$PAGE->debug_summary",
+    "body": "$PAGE->debug_summary();",
+    "description": "Get a description of this page. Normally displayed in the footer in developer debug mode."
+  },
+  "$PAGE->set_state": {
+    "prefix": "$PAGE->set_state",
+    "body": "$PAGE->set_state(${1|STATE_BEFORE_HEADER,STATE_PRINTING_HEADER,STATE_IN_BODY,STATE_DONE|});",
+    "description": "Set the state."
+  },
+  "$PAGE->set_course": {
+    "prefix": "$PAGE->set_course",
+    "body": "$PAGE->set_course(${1:\\$course});",
+    "description": "Set the current course. This sets both $PAGE->course and $COURSE. It also sets the right theme and locale."
+  },
+  "$PAGE->set_context": {
+    "prefix": "$PAGE->set_context",
+    "body": "$PAGE->set_context(${1:\\$context});",
+    "description": "Set the main context to which this page belongs."
+  },
+  "$PAGE->set_cm": {
+    "prefix": "$PAGE->set_cm",
+    "body": "$PAGE->set_cm(${1:\\$cm}${2:, ${3:\\$course}${4:, ${5:\\$module}}});",
+    "description": "The course module that this page belongs to (if it does belong to one)."
+  },
+  "$PAGE->set_activity_record": {
+    "prefix": "$PAGE->set_activity_record",
+    "body": "$PAGE->set_activity_record(${1:\\$module});",
+    "description": "Sets the activity record. This could be a row from the main table for a module. For instance if the current module (cm) is a forum this should be a row from the forum table."
+  },
+  "$PAGE->set_pagetype": {
+    "prefix": "$PAGE->set_pagetype",
+    "body": "$PAGE->set_pagetype(${1:\\$pagetype});",
+    "description": "Sets the pagetype to use for this page."
+  },
+  "$PAGE->set_pagelayout": {
+    "prefix": "$PAGE->set_pagelayout",
+    "body": "$PAGE->set_pagelayout(${1:\\$pagelayout});",
+    "description": "Sets the layout to use for this page."
+  },
+  "$PAGE->set_subpage": {
+    "prefix": "$PAGE->set_subpage",
+    "body": "$PAGE->set_subpage(${1:\\$subpage});",
+    "description": "If context->id and pagetype are not enough to uniquely identify this page, then you can set a subpage id as well. For example, the tags page sets"
+  },
+  "$PAGE->add_body_class": {
+    "prefix": "$PAGE->add_body_class",
+    "body": "$PAGE->add_body_class(${1:\\$class});",
+    "description": "Adds a CSS class to the body tag of the page."
+  },
+  "$PAGE->add_body_classes": {
+    "prefix": "$PAGE->add_body_classes",
+    "body": "$PAGE->add_body_classes(${1:\\$classes});",
+    "description": "Adds an array of body classes to the body tag of this page."
+  },
+  "$PAGE->set_title": {
+    "prefix": "$PAGE->set_title",
+    "body": "$PAGE->set_title(${1:\\$title});",
+    "description": "Sets the title for the page. This is normally used within the title tag in the head of the page."
+  },
+  "$PAGE->set_heading": {
+    "prefix": "$PAGE->set_heading",
+    "body": "$PAGE->set_heading(${1:\\$heading});",
+    "description": "Sets the heading to use for the page. This is normally used as the main heading at the top of the content."
+  },
+  "$PAGE->set_headingmenu": {
+    "prefix": "$PAGE->set_headingmenu",
+    "body": "$PAGE->set_headingmenu(${1:\\$menu});",
+    "description": "Sets some HTML to use next to the heading {@link moodle_page::set_heading()}"
+  },
+  "$PAGE->set_category_by_id": {
+    "prefix": "$PAGE->set_category_by_id",
+    "body": "$PAGE->set_category_by_id(${1:\\$categoryid});",
+    "description": "Set the course category this page belongs to manually."
+  },
+  "$PAGE->set_docs_path": {
+    "prefix": "$PAGE->set_docs_path",
+    "body": "$PAGE->set_docs_path(${1:\\$path});",
+    "description": "Set a different path to use for the 'Moodle docs for this page' link."
+  },
+  "$PAGE->set_url": {
+    "prefix": "$PAGE->set_url",
+    "body": "$PAGE->set_url(${1:\\$url}${2:, ${3:\\$params_array}});",
+    "description": "You should call this method from every page to set the URL that should be used to return to this page."
+  },
+  "$PAGE->ensure_param_not_in_url": {
+    "prefix": "$PAGE->ensure_param_not_in_url",
+    "body": "$PAGE->ensure_param_not_in_url(${1:\\$param});",
+    "description": "Make sure page URL does not contain the given URL parameter."
+  },
+  "$PAGE->add_alternate_version": {
+    "prefix": "$PAGE->add_alternate_version",
+    "body": "$PAGE->add_alternate_version(${1:\\$title}, ${2:\\$url}, ${3:\\$mimetype});",
+    "description": "Sets an alternative version of this page."
+  },
+  "$PAGE->set_focuscontrol": {
+    "prefix": "$PAGE->set_focuscontrol",
+    "body": "$PAGE->set_focuscontrol(${1:\\$controlid});",
+    "description": "Specify a form control should be focused when the page has loaded."
+  },
+  "$PAGE->set_button": {
+    "prefix": "$PAGE->set_button",
+    "body": "$PAGE->set_button(${1:\\$html});",
+    "description": "Specify a fragment of HTML that goes where the 'Turn editing on' button normally goes."
+  },
+  "$PAGE->set_blocks_editing_capability": {
+    "prefix": "$PAGE->set_blocks_editing_capability",
+    "body": "$PAGE->set_blocks_editing_capability(${1:\\$capability});",
+    "description": "Set the capability that allows users to edit blocks on this page."
+  },
+  "$PAGE->set_other_editing_capability": {
+    "prefix": "$PAGE->set_other_editing_capability",
+    "body": "$PAGE->set_other_editing_capability(${1:\\$capability});",
+    "description": "Some pages let you turn editing on for reasons other than editing blocks."
+  },
+  "$PAGE->set_cacheable": {
+    "prefix": "$PAGE->set_cacheable",
+    "body": "$PAGE->set_cacheable(${1:\\$cacheable});",
+    "description": "Sets whether the browser should cache this page or not."
+  },
+  "$PAGE->set_periodic_refresh_delay": {
+    "prefix": "$PAGE->set_periodic_refresh_delay",
+    "body": "$PAGE->set_periodic_refresh_delay(${1:\\$delay});",
+    "description": "Sets the page to periodically refresh"
+  },
+  "$PAGE->force_theme": {
+    "prefix": "$PAGE->force_theme",
+    "body": "$PAGE->force_theme(${1:\\$themename});",
+    "description": "Force this page to use a particular theme."
+  },
+  "$PAGE->reload_theme": {
+    "prefix": "$PAGE->reload_theme",
+    "body": "$PAGE->reload_theme();",
+    "description": "Reload theme settings."
+  },
+  "$PAGE->https_required": {
+    "prefix": "$PAGE->https_required",
+    "body": "$PAGE->https_required();",
+    "description": "@DEPRECATED SINCE MOODLE 3.4 MDL-42834. This function indicates that current page requires the https when $CFG->loginhttps enabled."
+  },
+  "$PAGE->verify_https_required": {
+    "prefix": "$PAGE->verify_https_required",
+    "body": "$PAGE->verify_https_required();",
+    "description": "@DEPRECATED SINCE MOODLE 3.4 MDL-42834. Makes sure that page previously marked with https_required() is really using https://, if not it redirects to https://"
+  },
+  "$PAGE->initialise_theme_and_output": {
+    "prefix": "$PAGE->initialise_theme_and_output",
+    "body": "$PAGE->initialise_theme_and_output();",
+    "description": "Method for use by Moodle core to set up the theme. Do not use this in your own code."
+  },
+  "$PAGE->reset_theme_and_output": {
+    "prefix": "$PAGE->reset_theme_and_output",
+    "body": "$PAGE->reset_theme_and_output();",
+    "description": "Reset the theme and output for a new context. This only makes sense from external::validate_context(). Do not cheat."
+  },
+  "$PAGE->has_set_url": {
+    "prefix": "$PAGE->has_set_url",
+    "body": "$PAGE->has_set_url();",
+    "description": "Returns true if the page URL has beem set."
+  },
+  "$PAGE->set_block_actions_done": {
+    "prefix": "$PAGE->set_block_actions_done",
+    "body": "$PAGE->set_block_actions_done(${1:\\$setting} );",
+    "description": "Gets set when the block actions for the page have been processed."
+  },
+  "$PAGE->get_popup_notification_allowed": {
+    "prefix": "$PAGE->get_popup_notification_allowed",
+    "body": "$PAGE->get_popup_notification_allowed();",
+    "description": "Are popup notifications allowed on this page? Popup notifications may be disallowed in situations such as while upgrading or completing a quiz"
+  },
+  "$PAGE->set_popup_notification_allowed": {
+    "prefix": "$PAGE->set_popup_notification_allowed",
+    "body": "$PAGE->set_popup_notification_allowed(${1:\\$allowed});",
+    "description": "Allow or disallow popup notifications on this page. Popups are allowed by default."
+  },
+  "$PAGE->apply_theme_region_manipulations": {
+    "prefix": "$PAGE->apply_theme_region_manipulations",
+    "body": "$PAGE->apply_theme_region_manipulations(${1:\\$region});",
+    "description": "Returns the block region having made any required theme manipulations."
+  },
+  "$PAGE->add_report_nodes": {
+    "prefix": "$PAGE->add_report_nodes",
+    "body": "$PAGE->add_report_nodes(${1:\\$userid}, ${2:\\$nodeinfo});",
+    "description": "Add a report node and a specific report to the navigation."
+  }
+}

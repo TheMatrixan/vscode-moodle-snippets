@@ -41,6 +41,10 @@
       },
       {
         "language": "php",
+        "path": "./snippets/GLOBAL/PAGE.json"
+      },
+      {
+        "language": "php",
         "path": "./snippets/lib/moodlelib.json"
       },
       {
