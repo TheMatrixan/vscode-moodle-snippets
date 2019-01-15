@@ -228,5 +228,190 @@
     "prefix": "$PAGE->add_report_nodes",
     "body": "$PAGE->add_report_nodes(${1:\\$userid}, ${2:\\$nodeinfo});",
     "description": "Add a report node and a specific report to the navigation."
+  },
+  "$PAGE->state": {
+    "prefix": "$PAGE->state",
+    "body": "\\$PAGE->state",
+    "description": "Returns integer one of the STATE_XXX constants. You should not normally need to use this in your code. It is intended for internal use by this class and its friends like print_header, to check that everything is working as expected. Also accessible as $PAGE->state."
+  },
+  "$PAGE->headerprinted": {
+    "prefix": "$PAGE->headerprinted",
+    "body": "\\$PAGE->headerprinted",
+    "description": "Returns bool has the header already been printed?"
+  },
+  "$PAGE->course": {
+    "prefix": "$PAGE->course",
+    "body": "\\$PAGE->course",
+    "description": "Returns stdClass the current course that we are inside - a row from the course table. (Also available as $COURSE global.) If we are not inside an actual course, this will be the site course."
+  },
+  "$PAGE->cm": {
+    "prefix": "$PAGE->cm",
+    "body": "\\$PAGE->cm",
+    "description": "Returns cm_info the course_module that this page belongs to. Will be null if this page is not within a module. This is a full cm object, as loaded by get_coursemodule_from_id or get_coursemodule_from_instance, so the extra modname and name fields are present."
+  },
+  "$PAGE->activityrecord": {
+    "prefix": "$PAGE->activityrecord",
+    "body": "\\$PAGE->activityrecord",
+    "description": "Returns stdClass the row from the activities own database table (for example the forum or quiz table) that this page belongs to. Will be null if this page is not within a module."
+  },
+  "$PAGE->activityname": {
+    "prefix": "$PAGE->activityname",
+    "body": "\\$PAGE->activityname",
+    "description": "Returns string the The type of activity we are in, for example 'forum' or 'quiz'. Will be null if this page is not within a module."
+  },
+  "$PAGE->category": {
+    "prefix": "$PAGE->category",
+    "body": "\\$PAGE->category",
+    "description": "Returns stdClass the category that the page course belongs to. If there isn't one (that is, if this is the front page course) returns null."
+  },
+  "$PAGE->categories": {
+    "prefix": "$PAGE->categories",
+    "body": "\\$PAGE->categories",
+    "description": "Returns array an array of all the categories the page course belongs to, starting with the immediately containing category, and working out to the top-level category. This may be the empty array if we are in the front page course."
+  },
+  "$PAGE->context": {
+    "prefix": "$PAGE->context",
+    "body": "\\$PAGE->context",
+    "description": "Returns context the main context to which this page belongs."
+  },
+  "$PAGE->pagetype": {
+    "prefix": "$PAGE->pagetype",
+    "body": "\\$PAGE->pagetype",
+    "description": "Returns string e.g. 'my-index' or 'mod-quiz-attempt'."
+  },
+  "$PAGE->bodyid": {
+    "prefix": "$PAGE->bodyid",
+    "body": "\\$PAGE->bodyid",
+    "description": "Returns string The id to use on the body tag, uses {@link magic_get_pagetype()}."
+  },
+  "$PAGE->pagelayout": {
+    "prefix": "$PAGE->pagelayout",
+    "body": "\\$PAGE->pagelayout",
+    "description": "Returns string the general type of page this is. For example 'standard', 'popup', 'home'.      Allows the theme to display things differently, if it wishes to."
+  },
+  "$PAGE->layout_options": {
+    "prefix": "$PAGE->layout_options",
+    "body": "\\$PAGE->layout_options",
+    "description": "Returns array returns arrays with options for layout file"
+  },
+  "$PAGE->subpage": {
+    "prefix": "$PAGE->subpage",
+    "body": "\\$PAGE->subpage",
+    "description": "Returns string The subpage identifier, if any."
+  },
+  "$PAGE->bodyclasses": {
+    "prefix": "$PAGE->bodyclasses",
+    "body": "\\$PAGE->bodyclasses",
+    "description": "Returns string the class names to put on the body element in the HTML."
+  },
+  "$PAGE->title": {
+    "prefix": "$PAGE->title",
+    "body": "\\$PAGE->title",
+    "description": "Returns string the title that should go in the <head> section of the HTML of this page."
+  },
+  "$PAGE->heading": {
+    "prefix": "$PAGE->heading",
+    "body": "\\$PAGE->heading",
+    "description": "Returns string the main heading that should be displayed at the top of the <body>."
+  },
+  "$PAGE->headingmenu": {
+    "prefix": "$PAGE->headingmenu",
+    "body": "\\$PAGE->headingmenu",
+    "description": "Returns string The menu (or actions) to display in the heading"
+  },
+  "$PAGE->docspath": {
+    "prefix": "$PAGE->docspath",
+    "body": "\\$PAGE->docspath",
+    "description": "Returns string the path to the Moodle docs for this page."
+  },
+  "$PAGE->url": {
+    "prefix": "$PAGE->url",
+    "body": "\\$PAGE->url",
+    "description": "Returns moodle_url the clean URL required to load the current page. (You should normally use this in preference to $ME or $FULLME.)"
+  },
+  "$PAGE->alternateversions": {
+    "prefix": "$PAGE->alternateversions",
+    "body": "\\$PAGE->alternateversions",
+    "description": "The list of alternate versions of this page. Array mime type => object with ->url and ->title. "
+  },
+  "$PAGE->blocks": {
+    "prefix": "$PAGE->blocks",
+    "body": "\\$PAGE->blocks",
+    "description": "Returns block_manager the blocks manager object for this page."
+  },
+  "$PAGE->requires": {
+    "prefix": "$PAGE->requires",
+    "body": "\\$PAGE->requires",
+    "description": "Returns page_requirements_manager tracks the JavaScript, CSS files, etc. required by this page."
+  },
+  "$PAGE->cacheable": {
+    "prefix": "$PAGE->cacheable",
+    "body": "\\$PAGE->cacheable",
+    "description": "Returns bool can this page be cached by the user's browser."
+  },
+  "$PAGE->focuscontrol": {
+    "prefix": "$PAGE->focuscontrol",
+    "body": "\\$PAGE->focuscontrol",
+    "description": "Returns string the id of the HTML element to be focused when the page has loaded."
+  },
+  "$PAGE->button": {
+    "prefix": "$PAGE->button",
+    "body": "\\$PAGE->button",
+    "description": "Returns string the HTML to go where the Turn editing on button normally goes."
+  },
+  "$PAGE->theme": {
+    "prefix": "$PAGE->theme",
+    "body": "\\$PAGE->theme",
+    "description": "Returns theme_config the initialised theme for this page."
+  },
+  "$PAGE->blockmanipulations": {
+    "prefix": "$PAGE->blockmanipulations",
+    "body": "\\$PAGE->blockmanipulations",
+    "description": "Returns an array of minipulations or false if there are none to make."
+  },
+  "$PAGE->devicetypeinuse": {
+    "prefix": "$PAGE->devicetypeinuse",
+    "body": "\\$PAGE->devicetypeinuse",
+    "description": "Returns string The device type being used."
+  },
+  "$PAGE->periodicrefreshdelay": {
+    "prefix": "$PAGE->periodicrefreshdelay",
+    "body": "\\$PAGE->periodicrefreshdelay",
+    "description": "Returns int The periodic refresh delay to use with meta refresh"
+  },
+  "$PAGE->opencontainers": {
+    "prefix": "$PAGE->opencontainers",
+    "body": "\\$PAGE->opencontainers",
+    "description": "Returns xhtml_container_stack tracks XHTML tags on this page that have been opened but not closed.      mainly for internal use by the rendering code."
+  },
+  "$PAGE->navigation": {
+    "prefix": "$PAGE->navigation",
+    "body": "\\$PAGE->navigation",
+    "description": "Return the navigation object - global_navigation."
+  },
+  "$PAGE->navbar": {
+    "prefix": "$PAGE->navbar",
+    "body": "\\$PAGE->navbar",
+    "description": "Return a navbar object"
+  },
+  "$PAGE->settingsnav": {
+    "prefix": "$PAGE->settingsnav",
+    "body": "\\$PAGE->settingsnav",
+    "description": "Returns the settings navigation object"
+  },
+  "$PAGE->flatnav": {
+    "prefix": "$PAGE->flatnav",
+    "body": "\\$PAGE->flatnav",
+    "description": "Returns the flat navigation object"
+  },
+  "$PAGE->requestip": {
+    "prefix": "$PAGE->requestip",
+    "body": "\\$PAGE->requestip",
+    "description": "Returns request IP address."
+  },
+  "$PAGE->requestorigin": {
+    "prefix": "$PAGE->requestorigin",
+    "body": "\\$PAGE->requestorigin",
+    "description": "Returns the origin of current request. Note: constants are not required because we need to use these values in logging and reports."
   }
 }
