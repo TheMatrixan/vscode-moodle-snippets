@@ -287,7 +287,7 @@
   "$PAGE->pagelayout": {
     "prefix": "$PAGE->pagelayout",
     "body": "\\$PAGE->pagelayout",
-    "description": "Returns string the general type of page this is. For example 'standard', 'popup', 'home'.      Allows the theme to display things differently, if it wishes to."
+    "description": "Returns string the general type of page this is. For example 'standard', 'popup', 'home'. Allows the theme to display things differently, if it wishes to."
   },
   "$PAGE->layout_options": {
     "prefix": "$PAGE->layout_options",
@@ -339,10 +339,135 @@
     "body": "\\$PAGE->blocks",
     "description": "Returns block_manager the blocks manager object for this page."
   },
-  "$PAGE->requires": {
-    "prefix": "$PAGE->requires",
-    "body": "\\$PAGE->requires",
-    "description": "Returns page_requirements_manager tracks the JavaScript, CSS files, etc. required by this page."
+  "$PAGE->requires->get_config_for_javascript": {
+    "prefix": "$PAGE->requires->get_config_for_javascript",
+    "body": "$PAGE->requires->get_config_for_javascript(${1:\\$moodle_page}, ${2:\\$renderer});",
+    "description": "Return the safe config values that get set for javascript in \"M.cfg\"."
+  },
+  "$PAGE->requires->js": {
+    "prefix": "$PAGE->requires->js",
+    "body": "$PAGE->requires->js(${1:\\$url}${2:, ${3:\\$inhead}});",
+    "description": "Ensure that the specified JavaScript file is linked to from this page. NOTE: This function is to be used in RARE CASES ONLY, please store your JS in module.js file and use $PAGE->requires->js_init_call() instead or use /yui/ subdirectories for YUI modules."
+  },
+  "$PAGE->requires->jquery": {
+    "prefix": "$PAGE->requires->jquery",
+    "body": "$PAGE->requires->jquery();",
+    "description": "Request inclusion of jQuery library in the page. NOTE: this should not be used in official Moodle distribution!"
+  },
+  "$PAGE->requires->jquery_plugin": {
+    "prefix": "$PAGE->requires->jquery_plugin",
+    "body": "$PAGE->requires->jquery_plugin(${1:\\$plugin}${2:, ${3:\\$component}});",
+    "description": "Request inclusion of jQuery plugin."
+  },
+  "$PAGE->requires->jquery_override_plugin": {
+    "prefix": "$PAGE->requires->jquery_override_plugin",
+    "body": "$PAGE->requires->jquery_override_plugin(${1:\\$oldplugin}, ${2:\\$newplugin});",
+    "description": "Request replacement of one jQuery plugin by another. This is useful when themes want to replace the jQuery UI theme, the problem is that theme can not prevent others from including the core ui-css plugin."
+  },
+  "$PAGE->requires->js_module": {
+    "prefix": "$PAGE->requires->js_module",
+    "body": "$PAGE->requires->js_module(${1:\\$module});",
+    "description": "Append YUI3 module to default YUI3 JS loader. The structure of module array is described at {@link http://developer.yahoo.com/yui/3/yui/}"
+  },
+  "$PAGE->requires->css": {
+    "prefix": "$PAGE->requires->css",
+    "body": "$PAGE->requires->css(${1:\\$stylesheet});",
+    "description": "Ensure that the specified CSS file is linked to from this page."
+  },
+  "$PAGE->requires->css_theme": {
+    "prefix": "$PAGE->requires->css_theme",
+    "body": "$PAGE->requires->css_theme(${1:\\$stylesheet_moodle_url});",
+    "description": "Add theme stylesheet to page - do not use from plugin code, this should be called only from the core renderer!"
+  },
+  "$PAGE->requires->skip_link_to": {
+    "prefix": "$PAGE->requires->skip_link_to",
+    "body": "$PAGE->requires->skip_link_to(${1:\\$target}, ${2:\\$linktext});",
+    "description": "Ensure that a skip link to a given target is printed at the top of the <body>. You must call this function before {@link get_top_of_body_code()}"
+  },
+  "$PAGE->requires->js_amd_inline": {
+    "prefix": "$PAGE->requires->js_amd_inline",
+    "body": "$PAGE->requires->js_amd_inline(${1:\\$code});",
+    "description": "This function appends a block of code to the AMD specific javascript block executed in the page footer, just after loading the requirejs library. The code passed here can rely on AMD module loading, e.g. require('jquery', function(${1:\\$)} {...});"
+  },
+  "$PAGE->requires->js_call_amd": {
+    "prefix": "$PAGE->requires->js_call_amd",
+    "body": "$PAGE->requires->js_call_amd(${1:\\$fullmodule}, ${2:\\$func}${3:, ${4:\\$params}});",
+    "description": "This function creates a minimal JS script that requires and calls a single function from an AMD module with arguments. If it is called multiple times, it will be executed multiple times."
+  },
+  "$PAGE->requires->yui_module": {
+    "prefix": "$PAGE->requires->yui_module",
+    "body": "$PAGE->requires->yui_module(${1:\\$modules}, ${2:\\$function},${3: ${4:\\$arguments_array}${5:, ${6:\\$galleryversion}${7:, ${8:\\$ondomready}}}});",
+    "description": "Creates a JavaScript function call that requires one or more modules to be loaded. This function can be used to include all of the standard YUI module types within JavaScript"
+  },
+  "$PAGE->requires->set_yuicssmodules": {
+    "prefix": "$PAGE->requires->set_yuicssmodules",
+    "body": "$PAGE->requires->set_yuicssmodules(${1:\\$modules_array});",
+    "description": "Set the CSS Modules to be included from YUI."
+  },
+  "$PAGE->requires->js_init_call": {
+    "prefix": "$PAGE->requires->js_init_call",
+    "body": "$PAGE->requires->js_init_call(${1:\\$function}${2:, ${3:\\$extraarguments_array}${4:, ${5:\\$ondomready}${6:, ${7:\\$module_array}}}});",
+    "description": "Ensure that the specified JavaScript function is called from an inline script from page footer."
+  },
+  "$PAGE->requires->js_init_code": {
+    "prefix": "$PAGE->requires->js_init_code",
+    "body": "$PAGE->requires->js_init_code(${1:\\$jscode}${2:, ${3:\\$ondomready}${4:, ${5:\\$module_array}}});",
+    "description": "Add short static javascript code fragment to page footer. This is intended primarily for loading of js modules and initialising page layout. Ideally the JS code fragment should be stored in plugin renderer so that themes may override it."
+  },
+  "$PAGE->requires->string_for_js": {
+    "prefix": "$PAGE->requires->string_for_js",
+    "body": "$PAGE->requires->string_for_js(${1:\\$identifier}, ${2:\\$component}${3:, ${4:\\$a}});",
+    "description": "Make a language string available to JavaScript. All the strings will be available in a M.str object in the global namespace. So, for example, after a call to $PAGE->requires->string_for_js('course', 'moodle'); then the JavaScript variable M.str.moodle.course will be 'Course', or the equivalent in the current language."
+  },
+  "$PAGE->requires->strings_for_js": {
+    "prefix": "$PAGE->requires->strings_for_js",
+    "body": "$PAGE->requires->strings_for_js(${1:\\$identifiers}, ${2:\\$component}${3:, ${4:\\$a}});",
+    "description": "Make an array of language strings available for JS. This function calls the above function {@link string_for_js()} for each requested string in the $identifiers array that is passed to the argument for a single module passed in $module."
+  },
+  "$PAGE->requires->event_handler": {
+    "prefix": "$PAGE->requires->event_handler",
+    "body": "$PAGE->requires->event_handler(${1:\\$selector}, ${2:\\$event}, ${3:\\$function}${4:, ${5:\\$arguments_array}});",
+    "description": "Creates a YUI event handler."
+  },
+  "$PAGE->requires->get_head_code": {
+    "prefix": "$PAGE->requires->get_head_code",
+    "body": "$PAGE->requires->get_head_code(${1:\\$moodle_page}, ${2:\\$renderer});",
+    "description": "Generate any HTML that needs to go inside the <head> tag. Normally, this method is called automatically by the code that prints the <head> tag. You should not normally need to call it in your own code."
+  },
+  "$PAGE->requires->get_top_of_body_code": {
+    "prefix": "$PAGE->requires->get_top_of_body_code",
+    "body": "$PAGE->requires->get_top_of_body_code(${1:\\$renderer});",
+    "description": "Generate any HTML that needs to go at the start of the <body> tag. Normally, this method is called automatically by the code that prints the <head> tag. You should not normally need to call it in your own code."
+  },
+  "$PAGE->requires->get_end_code": {
+    "prefix": "$PAGE->requires->get_end_code",
+    "body": "$PAGE->requires->()get_end_code;",
+    "description": "Generate any HTML that needs to go at the end of the page. Normally, this method is called automatically by the code that prints the page footer. You should not normally need to call it in your own code."
+  },
+  "$PAGE->requires->is_head_done": {
+    "prefix": "$PAGE->requires->is_head_done",
+    "body": "$PAGE->requires->()is_head_done;",
+    "description": "Have we already output the code in the <head> tag?"
+  },
+  "$PAGE->requires->is_top_of_body_done": {
+    "prefix": "$PAGE->requires->is_top_of_body_done",
+    "body": "$PAGE->requires->()is_top_of_body_done;",
+    "description": "Have we already output the code at the start of the <body> tag?"
+  },
+  "$PAGE->requires->should_create_one_time_item_now": {
+    "prefix": "$PAGE->requires->should_create_one_time_item_now",
+    "body": "$PAGE->requires->should_create_one_time_item_now(${1:\\$thing});",
+    "description": "Should we generate a bit of content HTML that is only required once on this page (e.g. the contents of the modchooser), now? Basically, we call {@link has_one_time_item_been_created()}, and if the thing has not already been output, we return true to tell the caller to generate it, and also call {@link set_one_time_item_created()} to record the fact that it is about to be generated."
+  },
+  "$PAGE->requires->has_one_time_item_been_created": {
+    "prefix": "$PAGE->requires->has_one_time_item_been_created",
+    "body": "$PAGE->requires->has_one_time_item_been_created(${1:\\$thing});",
+    "description": "Has a particular bit of HTML that is only required once on this page (e.g. the contents of the modchooser) already been generated? Normally, you can use the {@link should_create_one_time_item_now()} helper method rather than calling this method directly."
+  },
+  "$PAGE->requires->set_one_time_item_created": {
+    "prefix": "$PAGE->requires->set_one_time_item_created",
+    "body": "$PAGE->requires->set_one_time_item_created(${1:\\$thing});",
+    "description": "Indicate that a particular bit of HTML that is only required once on this page (e.g. the contents of the modchooser) has been generated (or is about to be)? Normally, you can use the {@link should_create_one_time_item_now()} helper method rather than calling this method directly."
   },
   "$PAGE->cacheable": {
     "prefix": "$PAGE->cacheable",
@@ -382,7 +507,7 @@
   "$PAGE->opencontainers": {
     "prefix": "$PAGE->opencontainers",
     "body": "\\$PAGE->opencontainers",
-    "description": "Returns xhtml_container_stack tracks XHTML tags on this page that have been opened but not closed.      mainly for internal use by the rendering code."
+    "description": "Returns xhtml_container_stack tracks XHTML tags on this page that have been opened but not closed. Mainly for internal use by the rendering code."
   },
   "$PAGE->navigation": {
     "prefix": "$PAGE->navigation",
