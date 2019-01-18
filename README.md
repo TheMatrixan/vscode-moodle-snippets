@@ -50,6 +50,19 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | `$DBur`  | `$DB->update_record(...);`  |
 | `$DBdrs` | `$DB->delete_records(...);` |
 
+### `$PAGE` Snippets
+
+| Snippet  | Purpose                              |
+| -------- | ------------------------------------ |
+| `$Prcss` | `$PAGE->requires->css(...)`          |
+| `$Prjic` | `$PAGE->requires->js_init_call(...)` |
+| `$Prjs`  | `$PAGE->requires->js(...)`           |
+| `$Psc`   | `$PAGE->set_context(...)`            |
+| `$Psh`   | `$PAGE->set_heading(...)`            |
+| `$Pspl`  | `$PAGE->set_pagelayout(...)`         |
+| `$Pst`   | `$PAGE->set_title(...)`              |
+| `$Psu`   | `$PAGE->set_url(...)`                |
+
 ### `moodlelib.php` Snippets
 
 | Snippet | Purpose                  |

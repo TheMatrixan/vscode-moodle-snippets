@@ -60,7 +60,7 @@
     "description": "Set the current course. This sets both $PAGE->course and $COURSE. It also sets the right theme and locale."
   },
   "$PAGE->set_context": {
-    "prefix": "$PAGE->set_context",
+    "prefix": ["$PAGE->set_context", "$Psc"],
     "body": "$PAGE->set_context(${1:\\$context});",
     "description": "Set the main context to which this page belongs."
   },
@@ -80,7 +80,7 @@
     "description": "Sets the pagetype to use for this page."
   },
   "$PAGE->set_pagelayout": {
-    "prefix": "$PAGE->set_pagelayout",
+    "prefix": ["$PAGE->set_pagelayout", "$Pspl"],
     "body": "$PAGE->set_pagelayout(${1:\\$pagelayout});",
     "description": "Sets the layout to use for this page."
   },
@@ -100,12 +100,12 @@
     "description": "Adds an array of body classes to the body tag of this page."
   },
   "$PAGE->set_title": {
-    "prefix": "$PAGE->set_title",
+    "prefix": ["$PAGE->set_title", "$Pst"],
     "body": "$PAGE->set_title(${1:\\$title});",
     "description": "Sets the title for the page. This is normally used within the title tag in the head of the page."
   },
   "$PAGE->set_heading": {
-    "prefix": "$PAGE->set_heading",
+    "prefix": ["$PAGE->set_heading", "$Psh"],
     "body": "$PAGE->set_heading(${1:\\$heading});",
     "description": "Sets the heading to use for the page. This is normally used as the main heading at the top of the content."
   },
@@ -125,7 +125,7 @@
     "description": "Set a different path to use for the 'Moodle docs for this page' link."
   },
   "$PAGE->set_url": {
-    "prefix": "$PAGE->set_url",
+    "prefix": ["$PAGE->set_url", "$Psu"],
     "body": "$PAGE->set_url(${1:\\$url}${2:, ${3:\\$params_array}});",
     "description": "You should call this method from every page to set the URL that should be used to return to this page."
   },
@@ -345,7 +345,7 @@
     "description": "Return the safe config values that get set for javascript in \"M.cfg\"."
   },
   "$PAGE->requires->js": {
-    "prefix": "$PAGE->requires->js",
+    "prefix": ["$PAGE->requires->js", "$Prjs"],
     "body": "$PAGE->requires->js(${1:\\$url}${2:, ${3:\\$inhead}});",
     "description": "Ensure that the specified JavaScript file is linked to from this page. NOTE: This function is to be used in RARE CASES ONLY, please store your JS in module.js file and use $PAGE->requires->js_init_call() instead or use /yui/ subdirectories for YUI modules."
   },
@@ -370,7 +370,7 @@
     "description": "Append YUI3 module to default YUI3 JS loader. The structure of module array is described at {@link http://developer.yahoo.com/yui/3/yui/}"
   },
   "$PAGE->requires->css": {
-    "prefix": "$PAGE->requires->css",
+    "prefix": ["$PAGE->requires->css", "$Prcss"],
     "body": "$PAGE->requires->css(${1:\\$stylesheet});",
     "description": "Ensure that the specified CSS file is linked to from this page."
   },
@@ -405,7 +405,7 @@
     "description": "Set the CSS Modules to be included from YUI."
   },
   "$PAGE->requires->js_init_call": {
-    "prefix": "$PAGE->requires->js_init_call",
+    "prefix": ["$PAGE->requires->js_init_call", "$Prjic"],
     "body": "$PAGE->requires->js_init_call(${1:\\$function}${2:, ${3:\\$extraarguments_array}${4:, ${5:\\$ondomready}${6:, ${7:\\$module_array}}}});",
     "description": "Ensure that the specified JavaScript function is called from an inline script from page footer."
   },
