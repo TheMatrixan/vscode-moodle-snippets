@@ -33,11 +33,15 @@
     "snippets": [
       {
         "language": "php",
-        "path": "./snippets/GLOBAL/OUTPUT.json"
+        "path": "./snippets/GLOBAL/CFG.json"
       },
       {
         "language": "php",
         "path": "./snippets/GLOBAL/DB.json"
+      },
+      {
+        "language": "php",
+        "path": "./snippets/GLOBAL/OUTPUT.json"
       },
       {
         "language": "php",

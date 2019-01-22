@@ -6,8 +6,9 @@ This extension for Visual Studio Code adds Moodle v. 3.4.6 snippets and autocomp
 
 Snippets for all public methods for GLOBAL variables:
 
-- `$OUTPUT`
+- `$CFG`
 - `$DB`
+- `$OUTPUT`
 - `$PAGE`
 
 Snippets for all methods from:
